@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: movespeed
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 6717209392469618894, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
+      propertyPath: veloMulti
+      value: 6.95
+      objectReference: {fileID: 0}
     - target: {fileID: 8648409669783420346, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
       propertyPath: m_Name
       value: Player

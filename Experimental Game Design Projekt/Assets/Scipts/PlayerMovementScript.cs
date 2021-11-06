@@ -5,48 +5,68 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
+    private Transform playerTransform;
     [SerializeField] float movespeed = 100f;
     [SerializeField] float veloX;
+    [SerializeField][Range(1,20)] float veloMulti = 1;
+
     [SerializeField] Vector2 mousePos;
-    // Start is called before the first frame update
+    [SerializeField] Vector2 playerPos;
+    private bool playerHitted;
+
+
+
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        playerTransform = GetComponent<Transform>();
+
     }
 
-    // Update is called once per frame
+    /*
+
+    */
     void Update()
     {
         this.veloX = rigidbody2D.velocity.x;
         this.mousePos = Input.mousePosition;
+        this.playerPos = rigidbody2D.position;
 
         if(Input.GetMouseButtonDown(0)){
-            print("Maustaste wurde gedrückt");
-            RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
-            if(hit != null){
-                print("Object hit: " + hit.transform.name);
+            //print("Maustaste wurde gedrückt");
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if(hit.collider != null){
+                if(hit.transform.name == "Player"){
+                    //print("Player Hit");
+                    playerHitted = true;
+                }
+                else{
+                    playerHitted = false;
+                }
+                //print("Object hit: " + hit.transform.name);
             }
-            else{
-                print("Hit == null");
+        }
+        if(Input.GetMouseButtonUp(0)){
+            //print("Maustaste Hoch");
+            if(playerHitted){
+                print("Player gezogen");
+                playerHitted = false;
+                forceToPlayer(Input.mousePosition);
             }
-            
         }
-
-
-
-        /*
-        if(Input.GetKey(KeyCode.D)){
-            rigidbody2D.AddForce(new Vector2(movespeed*Time.deltaTime,0));
-        }
-        if(Input.GetKey(KeyCode.A)){
-            rigidbody2D.AddForce(new Vector2(-movespeed*Time.deltaTime,0));
-        }
-        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)){
-            if(rigidbody2D.velocity.x < 0)
-                rigidbody2D.AddForce(new Vector2(- rigidbody2D.velocity.x * 0.5f , 0));
-            else if(rigidbody2D.velocity.x > 0)
-                rigidbody2D.AddForce(new Vector2(- rigidbody2D.velocity.x * 0.5f, 0));
-        }
-        */
     }
+
+    /*
+    * Rechnet den Vector zwichen dem Player und der Mausposition aus
+    * und beschleunigt mit den werden den Spieler
+    */
+    private void forceToPlayer(Vector3 mousePos){
+        Vector2 force = new Vector2(mousePos.x-playerTransform.position.x, mousePos.y-playerTransform.position.y);
+        print("MausPos " + mousePos);
+        print("PlayerPos" + playerTransform.position);
+        print("Force " + force);
+        rigidbody2D.AddForce(force);
+    }
+
+
 }
