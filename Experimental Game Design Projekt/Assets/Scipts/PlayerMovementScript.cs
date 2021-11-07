@@ -34,7 +34,7 @@ public class PlayerMovementScript : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if(hit.collider != null){
-                if(velocityX > 0.05f || velocityY > 0.05f) return;
+                //if(velocityX > 0.05f || velocityY > 0.05f) return;
                 if(hit.transform.name == "Player"){
                     playerHitted = true;
                 }
@@ -46,6 +46,7 @@ public class PlayerMovementScript : MonoBehaviour
         if(Input.GetMouseButtonUp(0)){
             if(playerHitted){
                 playerHitted = false;
+                playerRigidbody2D.gravityScale = 1;
                 forceToPlayer(Input.mousePosition);
             }
         }
