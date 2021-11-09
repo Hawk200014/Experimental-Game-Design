@@ -7,7 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     private Rigidbody2D playerRigidbody2D;
     private Transform playerTransform;
     [SerializeField] float movespeed = 100f;
-    [SerializeField][Range(1,100)] float veloMulti = 1;
+    [SerializeField][Range(1,300)] float veloMulti = 150;
     private bool playerHitted;
 
     //Displayed Variables

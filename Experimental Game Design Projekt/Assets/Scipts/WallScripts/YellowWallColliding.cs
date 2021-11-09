@@ -28,10 +28,6 @@ public class YellowWallColliding : MonoBehaviour
                 rigidbody2D.velocity = new Vector2(0f,0f);
                 rigidbody2D.gravityScale = 0;
             }
-            else{
-                print("Farbe vom Spieler ist nicht Gelb");
-            }
-
         }
     }
 }
