@@ -8,6 +8,7 @@ TagManager:
   - YellowKlettWall
   - RedKlettWall
   - BlueKlettWall
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -9,17 +9,20 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] float movespeed = 100f;
     [SerializeField][Range(1,300)] float veloMulti = 150;
     private bool playerHitted;
+    private bool slowPlayer;
 
     //Displayed Variables
     [SerializeField] float velocityX;
     [SerializeField] float velocityY;
     [SerializeField] Vector2 mousePos;
     [SerializeField] Vector2 playerPos;
+    [SerializeField] float playerSlowFactor = 0.5f;
 
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
+        slowPlayer = false;
     }
 
     /*
@@ -31,26 +34,49 @@ public class PlayerMovementScript : MonoBehaviour
         this.velocityY = playerRigidbody2D.velocity.y;
         this.mousePos = Input.mousePosition;
         this.playerPos = playerRigidbody2D.position;
+
+        if(slowPlayer){
+            playerRigidbody2D.AddForce(new Vector2(-velocityX*0.5f, 0f));       
+        }
+
+        if(velocityX < 0.05f && velocityX > -0.05 && velocityX != 0){
+            playerRigidbody2D.velocity = new Vector2(0f, velocityY);
+            
+        }
+
+
+
         if(Input.GetMouseButtonDown(0)){
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if(hit.collider != null){
-                //if(velocityX > 0.05f || velocityY > 0.05f) return;
-                if(hit.transform.name == "Player"){
-                    playerHitted = true;
-                }
-                else{
-                    playerHitted = false;
+                if(velocityX == 0 && velocityY == 0) {
+                    if(hit.transform.name == "Player"){
+                        playerHitted = true;
+                    }
+                    else{
+                        playerHitted = false;
+                    }
                 }
             }
         }
         if(Input.GetMouseButtonUp(0)){
             if(playerHitted){
+                slowPlayer = false;
                 playerHitted = false;
                 playerRigidbody2D.gravityScale = 1;
                 forceToPlayer(Input.mousePosition);
             }
         }
     }
+
+
+    //Verlangsamt Player, wenn er den Ground berührt
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Ground"){
+            slowPlayer = true;
+        }
+    }
+
 
 
 
