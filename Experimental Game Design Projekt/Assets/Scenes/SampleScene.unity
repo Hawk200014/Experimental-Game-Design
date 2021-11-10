@@ -644,6 +644,10 @@ PrefabInstance:
       value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 662945950662500736, guid: 262ac2404cb72674294658b1770c39bf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662945950662500736, guid: 262ac2404cb72674294658b1770c39bf, type: 3}
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
@@ -763,6 +767,14 @@ PrefabInstance:
     - target: {fileID: 6392297179780171795, guid: 0a19705cda3dce94ebd3af0dad96d629, type: 3}
       propertyPath: m_Name
       value: GreenPortal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289606167215862791, guid: 0a19705cda3dce94ebd3af0dad96d629, type: 3}
+      propertyPath: m_Radius
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289606167215862791, guid: 0a19705cda3dce94ebd3af0dad96d629, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a19705cda3dce94ebd3af0dad96d629, type: 3}
