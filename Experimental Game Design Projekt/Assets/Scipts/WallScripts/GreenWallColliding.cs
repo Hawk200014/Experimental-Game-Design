@@ -14,4 +14,20 @@ public class GreenWallColliding : MonoBehaviour
             }
         }
     }
+
+    void Start(){
+        audioSource = GetComponent<AudioSource>();
+    }   
+    
+    private AudioSource audioSource;
+    private void OnTriggerExit2D(Collider2D other){
+        if(other.tag == "Player"){
+            PlayerColor playerColor = other.GetComponent<PlayerColor>();
+            if(playerColor.getColor() == 'G'){
+                if(Juice.getJuice() > 0){
+                    audioSource.Play();
+                }
+            }
+        }
+    }
 }

@@ -9,6 +9,8 @@ TagManager:
   - RedKlettWall
   - BlueKlettWall
   - Ground
+  - Spike
+  - Point
   layers:
   - Default
   - TransparentFX

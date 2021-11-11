@@ -14,4 +14,21 @@ public class RedWallColliding : MonoBehaviour
             }
         }
     }
+
+    
+    void Start(){
+        audioSource = GetComponent<AudioSource>();
+    }   
+    
+    private AudioSource audioSource;
+    private void OnTriggerExit2D(Collider2D other){
+        if(other.tag == "Player"){
+            PlayerColor playerColor = other.GetComponent<PlayerColor>();
+            if(playerColor.getColor() == 'R'){
+                if(Juice.getJuice() > 0){
+                    audioSource.Play();
+                }
+            }
+        }
+    }
 }

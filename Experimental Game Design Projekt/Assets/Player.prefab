@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6730031213981002325}
   - component: {fileID: 4098729860935976577}
   - component: {fileID: 3618289538670746065}
+  - component: {fileID: 546778560696357275}
+  - component: {fileID: 4111519549505564935}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -115,17 +117,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8648409669783420346}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d1d7ef47ce1cf64195fdaee00ac2bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 100
-  veloMulti: 1
+  veloMulti: 300
   velocityX: 0
   velocityY: 0
   mousePos: {x: 0, y: 0}
   playerPos: {x: 0, y: 0}
+  playerSlowFactor: 0.5
 --- !u!58 &6730031213981002325
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +174,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.52
+--- !u!114 &546778560696357275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648409669783420346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a788f010003e74289896732210b6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPointX: -3.27
+  spawnPointY: 1
+--- !u!114 &4111519549505564935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648409669783420346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8364a94fe8134191258142b447cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  juicy: 0

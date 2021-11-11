@@ -10,6 +10,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField][Range(1,300)] float veloMulti = 150;
     private bool playerHitted;
     private bool slowPlayer;
+    [SerializeField] AudioSource audioSource;
 
     //Displayed Variables
     [SerializeField] float velocityX;
@@ -39,9 +40,8 @@ public class PlayerMovementScript : MonoBehaviour
             playerRigidbody2D.AddForce(new Vector2(-velocityX*0.5f, 0f));       
         }
 
-        if(velocityX < 0.05f && velocityX > -0.05 && velocityX != 0){
+        if(velocityX < 0.1f && velocityX > -0.1f && velocityX != 0){
             playerRigidbody2D.velocity = new Vector2(0f, velocityY);
-            
         }
 
 
@@ -49,7 +49,7 @@ public class PlayerMovementScript : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if(hit.collider != null){
-                if(velocityX == 0 && velocityY == 0) {
+                if(velocityX < 0.01f && velocityY < 0.01f && velocityX > -0.01f && velocityY > -0.01f) {
                     if(hit.transform.name == "Player"){
                         playerHitted = true;
                     }
@@ -85,6 +85,10 @@ public class PlayerMovementScript : MonoBehaviour
     * und beschleunigt mit den werden den Spieler
     */
     private void forceToPlayer(Vector3 mousePos){
+        if(Juice.getJuice() > 0){
+            print("AudioPlay");
+            audioSource.Play();
+        }
         Vector2 translatedMousePos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 force = new Vector2(playerTransform.position.x - translatedMousePos.x, playerTransform.position.y-translatedMousePos.y);
         playerRigidbody2D.AddForce(force*veloMulti);
