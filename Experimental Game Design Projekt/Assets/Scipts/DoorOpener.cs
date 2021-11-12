@@ -44,7 +44,7 @@ public class DoorOpener : MonoBehaviour
                 doordown = true;
                 audioSource.Play();
                 particleSystem.Play();
-                Destroy(particleSystem.gameObject, 3);
+                Destroy(particleSystem.gameObject, 5);
             }
         }
     }
