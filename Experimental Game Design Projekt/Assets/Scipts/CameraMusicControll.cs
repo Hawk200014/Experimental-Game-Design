@@ -5,16 +5,23 @@ using UnityEngine;
 public class CameraMusicControll : MonoBehaviour
 {
     // Start is called before the first frame update
+    private AudioSource audioSource;
+    private bool musicPlaying = false;
     void Start()
     {
-        if(Juice.getJuice() > 0){
-            GetComponent<AudioSource>().Play();
-        }
+        audioSource = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Juice.getJuice() == 1 || Juice.getJuice() == 2){
+            if(!musicPlaying){
+                print("Background Music");
+                audioSource.loop = true;
+                audioSource.Play();
+                musicPlaying = true;
+            }
+        }
     }
 }
