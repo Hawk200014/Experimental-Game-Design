@@ -19,6 +19,7 @@ public class PlayerDie : MonoBehaviour
             playerColor.setWhite();
             this.transform.position = new Vector2(spawnPointX, spawnPointY);
             rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.angularVelocity = 0;
         }
     }
 
