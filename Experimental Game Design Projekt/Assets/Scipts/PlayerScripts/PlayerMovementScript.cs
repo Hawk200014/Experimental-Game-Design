@@ -21,6 +21,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
         slowPlayer = false;
@@ -36,14 +37,20 @@ public class PlayerMovementScript : MonoBehaviour
         this.mousePos = Input.mousePosition;
         this.playerPos = playerRigidbody2D.position;
 
-        if(slowPlayer){
-            playerRigidbody2D.AddForce(new Vector2(-velocityX*0.5f, 0f));       
-        }
 
         if(velocityX < 0.1f && velocityX > -0.1f && velocityX != 0){
             playerRigidbody2D.velocity = new Vector2(0f, velocityY);
         }
 
+        if(slowPlayer){
+            print("Slow Force");
+            print(new Vector2(-velocityX*0.5f, 0f));
+            print(playerRigidbody2D.velocity.x);
+            playerRigidbody2D.AddForce(new Vector2(-velocityX*playerSlowFactor, 0f));       
+        }
+        if(playerRigidbody2D.velocity.x == 0){
+            slowPlayer = false;
+        }
 
 
         if(Input.GetMouseButtonDown(0)){
@@ -70,15 +77,9 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
 
-    //Verlangsamt Player, wenn er den Ground berührt
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.tag == "Ground"){
-            slowPlayer = true;
-        }
+    public void slowPlayerMovement(){
+        slowPlayer = true;
     }
-
-
-
 
     /*
     * Rechnet den Vector zwichen dem Player und der Mausposition aus
@@ -86,7 +87,6 @@ public class PlayerMovementScript : MonoBehaviour
     */
     private void forceToPlayer(Vector3 mousePos){
         if(Juice.getJuice() > 0){
-            print("AudioPlay");
             audioSource.Play();
         }
         Vector2 translatedMousePos = Camera.main.ScreenToWorldPoint(mousePos);

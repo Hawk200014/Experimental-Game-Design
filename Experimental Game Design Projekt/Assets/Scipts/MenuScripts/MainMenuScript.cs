@@ -10,7 +10,7 @@ public class MainMenuScript : MonoBehaviour
     }
 
     public void PlayPlayGround(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("PlayGroundSpawn");
     }
 
     public void QuitGame(){
