@@ -8,7 +8,7 @@ public class PlayerMovementScript : MonoBehaviour
     private Transform playerTransform;
     [SerializeField] float movespeed = 100f;
     [SerializeField][Range(1,300)] float veloMulti = 150;
-    private bool playerHitted;
+    public bool playerHitted;
     private bool slowPlayer;
     [SerializeField] AudioSource audioSource;
 
@@ -80,6 +80,15 @@ public class PlayerMovementScript : MonoBehaviour
     public void slowPlayerMovement(){
         slowPlayer = true;
     }
+
+    public bool getPlayerHit(){
+        return playerHitted;
+    }
+
+    public Vector3 getRelativMousePos(){
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
 
     /*
     * Rechnet den Vector zwichen dem Player und der Mausposition aus
