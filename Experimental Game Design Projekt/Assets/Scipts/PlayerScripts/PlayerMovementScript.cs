@@ -12,15 +12,19 @@ public class PlayerMovementScript : MonoBehaviour
     private bool slowPlayer;
     [SerializeField] AudioSource audioSource;
 
+    private ThrowLine line;
+
     //Displayed Variables
     [SerializeField] float velocityX;
     [SerializeField] float velocityY;
     [SerializeField] Vector2 mousePos;
     [SerializeField] Vector2 playerPos;
+    private Vector2 force;
     [SerializeField] float playerSlowFactor = 0.5f;
 
     void Start()
     {
+        line = GetComponent<ThrowLine>();
         audioSource = GetComponent<AudioSource>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
@@ -51,7 +55,8 @@ public class PlayerMovementScript : MonoBehaviour
         if(playerRigidbody2D.velocity.x == 0){
             slowPlayer = false;
         }
-
+        Vector2 translatedMousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        force = new Vector2(playerTransform.position.x - translatedMousePos.x, playerTransform.position.y-translatedMousePos.y);
 
         if(Input.GetMouseButtonDown(0)){
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -59,6 +64,7 @@ public class PlayerMovementScript : MonoBehaviour
                 if(velocityX < 0.01f && velocityY < 0.01f && velocityX > -0.01f && velocityY > -0.01f) {
                     if(hit.transform.name == "Player"){
                         playerHitted = true;
+                        line.showLine();
                     }
                     else{
                         playerHitted = false;
@@ -72,6 +78,7 @@ public class PlayerMovementScript : MonoBehaviour
                 playerHitted = false;
                 playerRigidbody2D.gravityScale = 1;
                 forceToPlayer(Input.mousePosition);
+                line.hideLines();
             }
         }
     }
@@ -98,10 +105,11 @@ public class PlayerMovementScript : MonoBehaviour
         if(Juice.getJuice() > 0){
             audioSource.Play();
         }
-        Vector2 translatedMousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        Vector2 force = new Vector2(playerTransform.position.x - translatedMousePos.x, playerTransform.position.y-translatedMousePos.y);
         playerRigidbody2D.AddForce(force*veloMulti);
     }
 
+    public Vector2 getForce(){
+        return force;
+    }
 
 }
