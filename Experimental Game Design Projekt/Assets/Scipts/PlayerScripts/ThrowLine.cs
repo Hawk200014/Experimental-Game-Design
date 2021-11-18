@@ -23,6 +23,8 @@ private void Start()
     movementScript = GetComponent<PlayerMovementScript>();
     lr = GetComponent<LineRenderer>();
     lr.startColor = Color.white;
+    lr.startWidth = 0.2f;
+    lr.endWidth = 0.2f;
 }
 
 // Update is called once per frame
@@ -61,10 +63,10 @@ private List<Vector2> SimulateArc()
         print("Point " + i + ": " + calculatedPosition);
         calculatedPosition.y += rigidbody2D.gravityScale * (i * simulationStep);
         lineRendererPoints.Add(calculatedPosition);
-        //if (CheckForCollision(calculatedPosition))//if you hit something
-        //{
-            //break;//stop adding positions
-        //}
+        if (CheckForCollision(calculatedPosition))//if you hit something
+        {
+            break;//stop adding positions
+        }
 
     }
 

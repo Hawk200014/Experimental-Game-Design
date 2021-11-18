@@ -7,7 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     private Rigidbody2D playerRigidbody2D;
     private Transform playerTransform;
     [SerializeField] float movespeed = 100f;
-    [SerializeField][Range(1,300)] float veloMulti = 150;
+    public float veloMulti = 150;
     public bool playerHitted;
     private bool slowPlayer;
     [SerializeField] AudioSource audioSource;
@@ -19,7 +19,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] float velocityY;
     [SerializeField] Vector2 mousePos;
     [SerializeField] Vector2 playerPos;
-    private Vector2 force;
+    public Vector2 force;
     [SerializeField] float playerSlowFactor = 0.5f;
 
     void Start()
@@ -105,7 +105,7 @@ public class PlayerMovementScript : MonoBehaviour
         if(Juice.getJuice() > 0){
             audioSource.Play();
         }
-        playerRigidbody2D.AddForce(force*veloMulti);
+        playerRigidbody2D.AddForce(force*veloMulti, ForceMode2D.Impulse);
     }
 
     public Vector2 getForce(){
