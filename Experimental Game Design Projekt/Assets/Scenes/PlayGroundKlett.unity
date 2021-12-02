@@ -9782,6 +9782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 4829777018411204630, guid: 68185857caae50640bdd9a70adbabbd4, type: 3}
+      propertyPath: orthographic size
+      value: 10.450406
+      objectReference: {fileID: 0}
     - target: {fileID: 4829777018411204631, guid: 68185857caae50640bdd9a70adbabbd4, type: 3}
       propertyPath: playerTransform
       value: 

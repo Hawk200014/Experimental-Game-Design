@@ -11,7 +11,7 @@ public class GroundSlow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player"){
-            print("Slow Player");
+            //print("Slow Player");
             other.GetComponent<PlayerMovementScript>().slowPlayerMovement();
         }
     }

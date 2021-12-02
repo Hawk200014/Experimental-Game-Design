@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Spike
   - Point
+  - ResetScore
   layers:
   - Default
   - TransparentFX

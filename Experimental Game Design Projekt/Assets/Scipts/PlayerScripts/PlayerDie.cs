@@ -15,7 +15,8 @@ public class PlayerDie : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        if(other.tag == "Spike"){
+        if (other.tag == "Spike"){
+            ThrowScore.scoreValue = 0;//reset throw score
             playerColor.setWhite();
             this.transform.position = new Vector2(spawnPointX, spawnPointY);
             rigidbody2D.velocity = Vector2.zero;

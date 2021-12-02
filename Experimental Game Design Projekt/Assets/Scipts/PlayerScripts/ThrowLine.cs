@@ -22,9 +22,9 @@ private void Start()
     Player = this.gameObject;
     movementScript = GetComponent<PlayerMovementScript>();
     lr = GetComponent<LineRenderer>();
-    lr.startColor = Color.white;
-    lr.startWidth = 0.2f;
-    lr.endWidth = 0.2f;
+    //lr.startColor = Color.white;
+    //lr.startWidth = 0.2f;
+    //lr.endWidth = 0.2f;
 }
 
 // Update is called once per frame
@@ -48,7 +48,7 @@ private List<Vector2> SimulateArc()
 
     int steps = (int)(simulateForDuration / simulationStep);
     steps = 10;
-    print("Steps: " + steps);
+    //print("Steps: " + steps);
     List<Vector2> lineRendererPoints = new List<Vector2>();
     Vector2 calculatedPosition;
     Vector2 directionVector = movementScript.getForce(); // The direction it should go
@@ -60,7 +60,7 @@ private List<Vector2> SimulateArc()
         
         calculatedPosition = launchPosition + (directionVector * ( launchSpeed * i * simulationStep));
         //Calculate gravity
-        print("Point " + i + ": " + calculatedPosition);
+       //print("Point " + i + ": " + calculatedPosition);
         calculatedPosition.y += rigidbody2D.gravityScale * (i * simulationStep);
         lineRendererPoints.Add(calculatedPosition);
         if (CheckForCollision(calculatedPosition))//if you hit something
