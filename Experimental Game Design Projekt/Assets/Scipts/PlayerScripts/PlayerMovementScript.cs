@@ -67,12 +67,12 @@ public class PlayerMovementScript : MonoBehaviour
         else
             force = new Vector2(playerTransform.position.x + translatedMousePos.x, playerTransform.position.y + translatedMousePos.y);
 
-        //wenn maus gedrückt
+        //wenn maus gedrï¿½ckt
         if (Input.GetMouseButtonDown(0)){
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if(hit.collider != null){
                 if(velocityX < 0.01f && velocityY < 0.01f && velocityX > -0.01f && velocityY > -0.01f) {
-                    if(hit.transform.name == "Player"){
+                    if(hit.collider.gameObject.tag == "Player" && hit.collider.gameObject.GetComponent<PlayerActiv>().getActive()){
                         playerHitted = true;
                         line.showLine();
                     }

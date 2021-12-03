@@ -15,7 +15,8 @@ public class CanvasFollowPlayer : MonoBehaviour
     public static float seconds = 0;
     public TMP_Text text;
     public static bool stop = true;
-    
+    private GameObject PlayerController;
+    private PlayereController playereControllerscript;
 
     public bool text_is_visible = true;
 
@@ -23,12 +24,14 @@ public class CanvasFollowPlayer : MonoBehaviour
     void Start()
     {
         text.text = "";
+        this.PlayerController = GameObject.Find("PlayerCon");
+        this.playereControllerscript = this.PlayerController.GetComponent<PlayereController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Player = this.playereControllerscript.getActivPlayer();
 
         if (minutes > 0 || seconds > 0)
         {

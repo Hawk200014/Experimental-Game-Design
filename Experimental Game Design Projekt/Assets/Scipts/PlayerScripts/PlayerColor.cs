@@ -19,11 +19,17 @@ public class PlayerColor : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private PlayerActiv playerActiv;
+
+    private AudioSource klettsound;
+    
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = new Color(1f,1f,1f,1f);
+        playerActiv = GetComponent<PlayerActiv>();
+        klettsound = GetComponents<AudioSource>()[1];
     }
 
     public char getColor(){
@@ -53,6 +59,31 @@ public class PlayerColor : MonoBehaviour
     public void setWhite(){
         spriteRenderer.color = new Color(1f,1f,1f,1f);
         this.color = 'W';
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Player"){
+            if(this.playerActiv.getActive()) return;
+            if(other.gameObject.GetComponent<PlayerColor>().getColor() == this.getColor()){
+                stickToIt(other);
+            }
+        }
+    }
+
+    private void stickToIt(Collider2D other){
+        Rigidbody2D rigidbody2D = other.GetComponent<Rigidbody2D>();
+        rigidbody2D.velocity = new Vector2(0f,0f);
+        rigidbody2D.gravityScale = 0; 
+    }
+    private void OnTriggerExit2D(Collider2D other){
+        if(other.tag == "Player"){
+            if(Juice.getJuice() < 1) return;
+            if(this.playerActiv.getActive()) return;
+            if(other.gameObject.GetComponent<PlayerColor>().getColor() == this.getColor()){
+                klettsound.enabled = true;
+                klettsound.Play();
+            }
+        }
     }
 
 }
