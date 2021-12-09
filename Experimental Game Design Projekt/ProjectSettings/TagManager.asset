@@ -12,6 +12,7 @@ TagManager:
   - Spike
   - Point
   - ResetScore
+  - RestartLevelButton
   layers:
   - Default
   - TransparentFX
