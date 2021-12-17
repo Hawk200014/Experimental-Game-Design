@@ -9,6 +9,13 @@ public class PlayereController : MonoBehaviour
     private ArrayList InactivePlayers;
     [SerializeField] GameObject ActivPlayer;
     [SerializeField] GameObject RespawnPoint;
+
+    [SerializeField] PointControllerScript pointControllerScript;
+
+    public void setPointController(PointControllerScript pointControllerScript){
+        this.pointControllerScript = pointControllerScript;
+    }
+
     private int MaxPlayers;
 
     private CameraScript cameraScript;
@@ -16,12 +23,18 @@ public class PlayereController : MonoBehaviour
 
 
     private void Start(){
+        pointControllerScript.setMaxPoints(6);
         setMaxPlayers(100);
         InactivePlayers = new ArrayList();
         print("InitPlayer");
         ActivPlayer = Instantiate(PlayerPrefab, RespawnPoint.transform.position, RespawnPoint.transform.rotation);
+        ActivPlayer.GetComponent<CollectPoints>().setPointController(this.pointControllerScript);
         cameraScript = Camera.GetComponent<CameraScript>();
         cameraScript.setPlayer(ActivPlayer);
+    }
+
+    public void setRespawnPoint(GameObject RespawnPoint){
+        this.RespawnPoint = RespawnPoint;
     }
 
     public void setMaxPlayers(int maxplayers){
@@ -34,6 +47,7 @@ public class PlayereController : MonoBehaviour
 
     private void setInactive(){
         ActivPlayer.GetComponent<PlayerActiv>().setInactive();
+        ActivPlayer.GetComponent<CollectPoints>().setPointController(this.pointControllerScript);
         InactivePlayers.Add(ActivPlayer);
     }
 

@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class CollectPoints : MonoBehaviour
 {
+
+
+    [SerializeField] PointControllerScript pointControllerScript;
     private int points;
     AudioSource audioSource;
     ParticleSystem particleSystem;
     void Start()
     {
         points = 0;
+    }
+
+    public void setPointController(PointControllerScript pointControllerScript){
+        this.pointControllerScript = pointControllerScript;
     }
 
     // Update is called once per frame
@@ -22,6 +29,7 @@ public class CollectPoints : MonoBehaviour
         if(other.tag == "Point"){
             audioSource = other.GetComponent<AudioSource>();
             print("Point");
+            pointControllerScript.addOnePoint();
             points++;
             if(Juice.getJuice() == 0){
                 Destroy(other.gameObject);
