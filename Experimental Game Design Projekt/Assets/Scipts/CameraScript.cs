@@ -41,7 +41,7 @@ public class CameraScript : MonoBehaviour
         else
         {
             if(!changeCamera){
-                this.transform.position = new Vector3(playerTransform.transform.position.x, playerTransform.transform.position.y, -10);
+                this.transform.position = new Vector3(playerTransform.transform.position.x, playerTransform.transform.position.y+(float)0.8, -10);
             }
             else{
                 this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(playerTransform.transform.position.x, playerTransform.transform.position.y, -10f), CameraMoveSpeed*Time.deltaTime);

@@ -23,7 +23,7 @@ public class CanvasFollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = "";
+        text.text = "test";
         this.PlayerController = GameObject.Find("PlayerCon");
         this.playereControllerscript = this.PlayerController.GetComponent<PlayereController>();
     }
@@ -54,7 +54,7 @@ public class CanvasFollowPlayer : MonoBehaviour
             }
         }
         else
-            text.text = "";
+            text.text = "test";
 
 
         playerPos = Player.transform.position;
