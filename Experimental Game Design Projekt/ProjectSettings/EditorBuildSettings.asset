@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayGroundSpawn.unity
     guid: 5d5646fa56b18e1418c415f9f2c911ea
+  - enabled: 1
+    path: Assets/Scenes/x.unity
+    guid: 5140ac1b46821b941a0a5967edd5283c
+  - enabled: 1
+    path: Assets/Scenes/tut1.unity
+    guid: f51f888a2f5b5634c805303e055a1e70
+  - enabled: 1
+    path: Assets/Scenes/tut2.unity
+    guid: 731b3b5cb3f5b5a41aaec4c455e95a69
+  - enabled: 1
+    path: Assets/Scenes/tut3.unity
+    guid: d23e6ed83b73a2f4084cc328f5feb302
+  - enabled: 1
+    path: Assets/Scenes/tut4.unity
+    guid: b1008bc2602cbda458d52fde5c20a579
   m_configObjects: {}
