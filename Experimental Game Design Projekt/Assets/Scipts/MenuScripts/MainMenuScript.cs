@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public void PlayGame(){
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("tut1");
     }
 
     public void PlayPlayGround(){

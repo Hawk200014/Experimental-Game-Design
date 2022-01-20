@@ -367,6 +367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4829777018411204843, guid: 68185857caae50640bdd9a70adbabbd4, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: aefd7c6c57ca94f4780209f7944c0409, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68185857caae50640bdd9a70adbabbd4, type: 3}
 --- !u!1 &80067634
@@ -3994,6 +3998,10 @@ PrefabInstance:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 1939268934}
+    - target: {fileID: 4273000216038546105, guid: e1285b34d1f2c2d4d8dacb497de8c7a5, type: 3}
+      propertyPath: pointControllerScript
+      value: 
+      objectReference: {fileID: 1928952790}
     - target: {fileID: 4273000216038546106, guid: e1285b34d1f2c2d4d8dacb497de8c7a5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -7172,6 +7180,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JuiceOMeter: 2
+--- !u!114 &1928952790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928952786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d383c3b73b55ad44a5ce8600f099847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxPoints: 0
 --- !u!1001 &1929490130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7879,6 +7900,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0efeb4f8bad0cd04ba7da9a349bdfe48, type: 3}
+--- !u!1001 &1572501626378496878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318769, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572501625176318771, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
+      propertyPath: m_Name
+      value: PauseMenuCon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5d02891ef77f074396faa3ee1edbbd3, type: 3}
 --- !u!1001 &4420506632787782836
 PrefabInstance:
   m_ObjectHideFlags: 0

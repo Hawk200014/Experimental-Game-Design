@@ -35,6 +35,14 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
       value: 0.008191705
       objectReference: {fileID: 0}
+    - target: {fileID: 6966248931412874594, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: aefd7c6c57ca94f4780209f7944c0409, type: 2}
+    - target: {fileID: 7132200721202963167, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: aefd7c6c57ca94f4780209f7944c0409, type: 2}
     - target: {fileID: 8134587390489328682, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -45,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8648409669783420346, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8690202676419502554, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
       propertyPath: m_RootOrder

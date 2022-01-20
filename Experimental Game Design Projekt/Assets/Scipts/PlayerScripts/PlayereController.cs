@@ -26,7 +26,7 @@ public class PlayereController : MonoBehaviour
         pointControllerScript.setMaxPoints(6);
         setMaxPlayers(100);
         InactivePlayers = new ArrayList();
-        print("InitPlayer");
+        Debug.Log("InitPlayer");
         ActivPlayer = Instantiate(PlayerPrefab, RespawnPoint.transform.position, RespawnPoint.transform.rotation);
         ActivPlayer.GetComponent<CollectPoints>().setPointController(this.pointControllerScript);
         cameraScript = Camera.GetComponent<CameraScript>();

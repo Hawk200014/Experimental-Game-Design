@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 3.1176453
       objectReference: {fileID: 0}
+    - target: {fileID: 7559829548403667468, guid: 20479656adbc049418f609a209953291, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: aefd7c6c57ca94f4780209f7944c0409, type: 2}
     - target: {fileID: 8081268235778244704, guid: 20479656adbc049418f609a209953291, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -73,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8081268235778244765, guid: 20479656adbc049418f609a209953291, type: 3}
       propertyPath: m_Name
-      value: Point (9)
+      value: Point (9) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20479656adbc049418f609a209953291, type: 3}
