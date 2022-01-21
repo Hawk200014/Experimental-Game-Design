@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9204151112991511435, guid: 178fe34ad65fbbf44847de109367755b, type: 3}
       propertyPath: veloMulti
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178fe34ad65fbbf44847de109367755b, type: 3}

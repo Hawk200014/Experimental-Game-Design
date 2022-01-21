@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 68}
-  m_SizeDelta: {x: 383.96, y: 61.206}
+  m_AnchoredPosition: {x: 21.147, y: 111.75}
+  m_SizeDelta: {x: 1632.485, y: 617.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287016009
 MonoBehaviour:
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Selim \xDClker\nDamien Becker"
+  m_Text: "Selim \xDClker, Damien Becker"
 --- !u!222 &287016010
 CanvasRenderer:
   m_ObjectHideFlags: 0

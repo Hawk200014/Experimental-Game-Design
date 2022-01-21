@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class tut4controller : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class tut4controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y > 12)
+        {
+            SceneManager.LoadScene("Menu");
+        }
         if (GameObject.Find("DialogBoxShip") == null)
         {
             GameObject.Find("schiff").GetComponent<YellowWallColliding>().enabled = true;
@@ -34,9 +40,13 @@ public class tut4controller : MonoBehaviour
 
     IEnumerator ascend()
     {
+        float alpha = 0;
         while(true)
         {
+            alpha += 0.01f;
             transform.position = new Vector2(transform.position.x, transform.position.y + (float)0.03);
+            GameObject.Find("Ending Color").GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, alpha);
+
             yield return new WaitForSeconds(0.05f);
         }
     }

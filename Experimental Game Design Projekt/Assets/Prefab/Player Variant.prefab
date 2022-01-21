@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
       value: 0.008191705
       objectReference: {fileID: 0}
+    - target: {fileID: 6717209392469618894, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
+      propertyPath: veloMulti
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6966248931412874594, guid: 4492f9f08ce410147940047a6cec04cf, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
