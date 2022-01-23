@@ -15,13 +15,13 @@ public class CameraMusicControll : MonoBehaviour
 
     void Update()
     {
-        if(Juice.getJuice() == 1 || Juice.getJuice() == 2){
-            if(!musicPlaying){
-                print("Background Music");
-                audioSource.loop = true;
-                audioSource.Play();
-                musicPlaying = true;
-            }
+        
+        if(!musicPlaying){
+            print("Background Music");
+            audioSource.loop = true;
+            audioSource.Play();
+            musicPlaying = true;
         }
+        
     }
 }
