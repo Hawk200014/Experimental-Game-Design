@@ -17,7 +17,7 @@ public class tut4controller : MonoBehaviour
     {
         if(transform.position.y > 12)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("GameEnd");
         }
         if (GameObject.Find("DialogBoxShip") == null)
         {
